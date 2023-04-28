@@ -1,13 +1,19 @@
+import com.google.gson.Gson;
+import eu.larkc.csparql.cep.api.RdfQuadruple;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.protocol.Message;
+import pucrio.br.lac.model.TriplesBlock;
 import pucrio.br.lac.utils.ConsumerCreator;
 import pucrio.br.lac.utils.ShutdownableThread;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Main {
+import pucrio.br.lac.utils.Utils;
 
+public class Main {
+    private static Utils utils;
     public static void main(String[] args){
         System.out.println("Hello World!");
 
@@ -36,7 +42,6 @@ public class Main {
                 "earliest");
 
         System.out.println("Consumer started on topics = "+ topicName );
-
         Main.ThreadConsumer scriptConsumer = new Main.ThreadConsumer(consumer, consumerGroupName);
         scriptConsumer.start();
     }
@@ -69,6 +74,17 @@ public class Main {
                     //System.out.println("Record offset " + record.offset());
 
                     // TODO: Do something here...
+
+                    if (utils.getAttributeFromMsg(record.value(), "isRDFgraph").equalsIgnoreCase("true")){
+                        ArrayList<TriplesBlock> messageTriplesBlock = utils.getTriplesBlockFromJSONSnip(record.value());
+                        System.out.println(messageTriplesBlock.get(0));
+                    }
+                    else{
+                        ArrayList<RdfQuadruple> messageTriplesRDF = utils.getTriplesFromJSONSnip(record.value());
+                        System.out.println(messageTriplesRDF.get(0));
+                    }
+
+
                 }
 
                 //consumer.commitAsync();
@@ -84,6 +100,20 @@ public class Main {
                     }
                 });
             }
+        }
+
+        private static Message toMessage(String messageStr) {
+            System.out.println(messageStr);
+            Gson gson = new Gson();
+            Message message = null;
+
+            try {
+                message = gson.fromJson(messageStr, Message.class);
+                System.out.println("Message class: " + message);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return message;
         }
 
         @Override

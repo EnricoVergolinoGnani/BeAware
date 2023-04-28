@@ -1,0 +1,22 @@
+DEBUG 0 [2023-01-18 18:14:49,326] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-01-18 18:19:41,225] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-02-10 15:29:29,228] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+ERROR 113570 [2023-02-10 15:31:22,798] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Error due to 
+java.lang.ClassCastException: class com.google.gson.JsonObject cannot be cast to class com.google.gson.JsonArray (com.google.gson.JsonObject and com.google.gson.JsonArray are in unnamed module of loader 'app')
+	at pucrio.br.lac.utils.Utils.parseJsonArrayIntoString(Utils.java:164)
+	at pucrio.br.lac.utils.Utils.getTriplesBlockFromJSONSnip(Utils.java:50)
+	at Main$ThreadConsumer.doWork(Main.java:77)
+	at pucrio.br.lac.utils.ShutdownableThread.run(ShutdownableThread.java:66)
+DEBUG 113581 [2023-02-10 15:31:22,809] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Stopped 
+DEBUG 0 [2023-02-10 15:55:59,276] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+ERROR 610 [2023-02-10 15:55:59,886] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Error due to 
+java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "pucrio.br.lac.utils.Utils.getAttributeFromMsg(String, String)" is null
+	at Main$ThreadConsumer.doWork(Main.java:79)
+	at pucrio.br.lac.utils.ShutdownableThread.run(ShutdownableThread.java:66)
+DEBUG 614 [2023-02-10 15:55:59,890] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Stopped 
+DEBUG 0 [2023-02-10 15:57:02,697] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-03-15 21:25:33,616] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-03-27 17:20:21,627] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-03-31 01:42:19,702] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-03-31 16:28:16,152] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-04-06 16:19:23,462] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 

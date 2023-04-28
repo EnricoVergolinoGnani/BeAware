@@ -1,0 +1,10 @@
+ERROR 113570 [2023-02-10 15:31:22,798] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Error due to 
+java.lang.ClassCastException: class com.google.gson.JsonObject cannot be cast to class com.google.gson.JsonArray (com.google.gson.JsonObject and com.google.gson.JsonArray are in unnamed module of loader 'app')
+	at pucrio.br.lac.utils.Utils.parseJsonArrayIntoString(Utils.java:164)
+	at pucrio.br.lac.utils.Utils.getTriplesBlockFromJSONSnip(Utils.java:50)
+	at Main$ThreadConsumer.doWork(Main.java:77)
+	at pucrio.br.lac.utils.ShutdownableThread.run(ShutdownableThread.java:66)
+ERROR 610 [2023-02-10 15:55:59,886] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Error due to 
+java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "pucrio.br.lac.utils.Utils.getAttributeFromMsg(String, String)" is null
+	at Main$ThreadConsumer.doWork(Main.java:79)
+	at pucrio.br.lac.utils.ShutdownableThread.run(ShutdownableThread.java:66)
