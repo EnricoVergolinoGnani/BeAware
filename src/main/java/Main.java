@@ -73,18 +73,15 @@ public class Main {
                     //System.out.println("Record partition " + record.partition());
                     //System.out.println("Record offset " + record.offset());
 
-                    // TODO: Do something here...
-
-                    if (utils.getAttributeFromMsg(record.value(), "isRDFgraph").equalsIgnoreCase("true")){
+                    // Identify and get Triples as block or RDF and print then:
+                    if (utils.getAttributeFromMsg(record.value(), "isRDFgraph").equalsIgnoreCase("true")) {
                         ArrayList<TriplesBlock> messageTriplesBlock = utils.getTriplesBlockFromJSONSnip(record.value());
-                        System.out.println(messageTriplesBlock.get(0));
-                    }
-                    else{
+                        System.out.println(messageTriplesBlock.get(0)); // Chama classe para traduzir mensagem de bloco
+                    } else {
                         ArrayList<RdfQuadruple> messageTriplesRDF = utils.getTriplesFromJSONSnip(record.value());
-                        System.out.println(messageTriplesRDF.get(0));
+                        System.out.println(messageTriplesRDF.get(0)); // Chama classe para traduzir mensagem de Triple
+                        // Caso não existente na pratica
                     }
-
-
                 }
 
                 //consumer.commitAsync();
@@ -100,20 +97,6 @@ public class Main {
                     }
                 });
             }
-        }
-
-        private static Message toMessage(String messageStr) {
-            System.out.println(messageStr);
-            Gson gson = new Gson();
-            Message message = null;
-
-            try {
-                message = gson.fromJson(messageStr, Message.class);
-                System.out.println("Message class: " + message);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return message;
         }
 
         @Override
