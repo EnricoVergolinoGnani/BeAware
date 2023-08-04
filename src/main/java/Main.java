@@ -1,9 +1,8 @@
-import com.google.gson.Gson;
 import eu.larkc.csparql.cep.api.RdfQuadruple;
+import pucrio.br.lac.logic.MessageTranslator;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
-import org.apache.kafka.common.protocol.Message;
-import pucrio.br.lac.model.TriplesBlock;
+import pucrio.br.lac.model.dscep.TriplesBlock;
 import pucrio.br.lac.utils.ConsumerCreator;
 import pucrio.br.lac.utils.ShutdownableThread;
 
@@ -13,6 +12,7 @@ import java.util.Map;
 import pucrio.br.lac.utils.Utils;
 
 public class Main {
+    private static MessageTranslator translator;
     private static Utils utils;
     public static void main(String[] args){
         System.out.println("Hello World!");
@@ -76,7 +76,9 @@ public class Main {
                     // Identify and get Triples as block or RDF and print then:
                     if (utils.getAttributeFromMsg(record.value(), "isRDFgraph").equalsIgnoreCase("true")) {
                         ArrayList<TriplesBlock> messageTriplesBlock = utils.getTriplesBlockFromJSONSnip(record.value());
-                        System.out.println(messageTriplesBlock.get(0)); // Chama classe para traduzir mensagem de bloco
+                        // TODO: Chama classe para traduzir mensagem de bloco
+                        translator.translateMessage(messageTriplesBlock);
+                        System.out.println("\nSegundo print: " + messageTriplesBlock.get(0));
                     } else {
                         ArrayList<RdfQuadruple> messageTriplesRDF = utils.getTriplesFromJSONSnip(record.value());
                         System.out.println(messageTriplesRDF.get(0)); // Chama classe para traduzir mensagem de Triple

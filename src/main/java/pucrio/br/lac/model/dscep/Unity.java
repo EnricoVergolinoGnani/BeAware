@@ -1,7 +1,7 @@
 /**
  *
  */
-package pucrio.br.lac.model;
+package pucrio.br.lac.model.dscep;
 
 /**
  * @author vitor

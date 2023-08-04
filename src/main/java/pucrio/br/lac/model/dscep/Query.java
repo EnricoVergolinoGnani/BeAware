@@ -1,4 +1,4 @@
-package pucrio.br.lac.model;
+package pucrio.br.lac.model.dscep;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

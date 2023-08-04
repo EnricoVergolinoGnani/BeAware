@@ -1,3 +1,5 @@
+package pucrio.br.lac.model;
+
 import eu.larkc.csparql.cep.api.RdfQuadruple;
 
 import java.util.List;

@@ -1,7 +1,6 @@
-package pucrio.br.lac.model;
+package pucrio.br.lac.model.dscep;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class AggInfo
 {

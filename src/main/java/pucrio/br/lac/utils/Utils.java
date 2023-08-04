@@ -8,7 +8,6 @@ import java.util.Properties;
 import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.graph.NodeFactory;
 import com.hp.hpl.jena.graph.Triple;
-import pucrio.br.lac.model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,6 +16,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import eu.larkc.csparql.cep.api.RdfQuadruple;
+import pucrio.br.lac.model.dscep.AggInfo;
+import pucrio.br.lac.model.dscep.QueryInfo;
+import pucrio.br.lac.model.dscep.StreamSnipBlocks;
+import pucrio.br.lac.model.dscep.TriplesBlock;
 
 /**
  * @author vitor

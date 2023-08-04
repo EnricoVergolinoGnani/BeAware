@@ -20,3 +20,5 @@ DEBUG 0 [2023-03-27 17:20:21,627] [BeawarosConsumer] class pucrio.br.lac.utils.S
 DEBUG 0 [2023-03-31 01:42:19,702] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
 DEBUG 0 [2023-03-31 16:28:16,152] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
 DEBUG 0 [2023-04-06 16:19:23,462] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-07-07 15:25:44,584] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
+DEBUG 0 [2023-07-07 15:48:39,100] [BeawarosConsumer] class pucrio.br.lac.utils.ShutdownableThread[BeawarosConsumer],   - Starting 
